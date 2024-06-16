@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <header class="header">
+        <a onclick="showMainMenu()" title="Main menu" class="btn header_menu">
+            <i class="header_menu-icon fa-solid fa-bars"></i>
+        </a>
+        <div title="Mini Note" class="header_logo">
+            <img src="./assets/img/note_logo.png" alt="" class="header_logo-img">
+            <h1 class="header_logo-name">Mini Note</h1>
+        </div>
+        <div class="header_search">
+            <button title="Search" href="" class="btn header_search-find-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input onfocusin="changeBackGroundSearch()" type="search" name="Search bar" class="header_search-bar"
+                placeholder="Search">
+            <button title="Clear Search Content" href="" class="btn header_search-delete-btn">
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+        <ul class="header_features">
+            <li title="Refresh" class="btn header_features-item">
+                <i class="fa-solid fa-rotate-right"></i>
+            </li>
+            <li title="List view" class="btn header_features-item">
+                <i class="fa-solid fa-list"></i>
+            </li>
+            <li title="Setting" class="btn header_features-item setting-btn_js">
+                <i class="fa-solid fa-gear"></i>
+                <ul title="" class="setting-box">
+                    <li class="setting-box_item"><a href="" class="setting-box_btn">Setting</a></li>
+                    <li class="setting-box_item"><a href="" class="setting-box_btn">Turn on dark mode</a></li>
+                    <li class="setting-box_item"><a href="" class="setting-box_btn">Send feedback</a></li>
+                    <li class="setting-box_item"><a href="" class="setting-box_btn">Help</a></li>
+                    <li class="setting-box_item"><a href="" class="setting-box_btn">Download application</a></li>
+                    <li class="setting-box_item"><a href="" class="setting-box_btn">Shortcuts</a></li>
+                </ul>
+            </li>
+            <li title="Application" class="btn header_features-item app-btn_js">
+                <i class="material-symbols-outlined">apps</i>
+                <div class="application-container">
+                    <a href="https://www.youtube.com/" target="_blank" class="app-item">
+                        <i class="app-item_icon fa-brands fa-youtube" style="font-size:48px;color:red"></i>
+                        <p class="app-item_name">Youtube</p>
+                    </a>
+                    <a href="https://www.google.com/" target="_blank" class="app-item">
+                        <img src="./assets/img/google.png" class="app-item_icon"></img>
+                        <p class="app-item_name">Search</p>
+                    </a>
+                    <a href="https://mail.google.com/" target="_blank" class="app-item">
+                        <img src="./assets/img/gmail.png" class="app-item_icon"></img>
+                        <p class="app-item_name">Gmail</p>
+                    </a>
+                    <a href="https://maps.google.com/" target="_blank" class="app-item">
+                        <img src="./assets/img/google-maps.png" class="app-item_icon"></img>
+                        <p class="app-item_name">Maps</p>
+                    </a>
+                </div>
+            </li>
+            <li title="Account" class="btn header_features-item">
+                <i class="fa-regular fa-user"></i>
+            </li>
+        </ul>
+
+    </header>
+
+    <div class="content_container">
+        <div class="sidebar">
+            <div class="sidebar-container">
+                <div class=" sidebar_icon-container">
+                    <a href="" class="sidebar_icon-btn">
+                        <i class="btn sidebar_icon fa-regular fa-lightbulb sidebar_item"></i>
+                    </a>
+                    <a href="" class="sidebar_icon-btn">
+                        <i class="btn sidebar_icon fa-regular fa-bell sidebar_item"></i>
+                    </a>
+                    <a href="" class="sidebar_icon-btn">
+                        <i class="btn sidebar_icon fa-solid fa-pen sidebar_item"></i>
+                    </a>
+                    <a href="" class="sidebar_icon-btn">
+                        <i class="btn sidebar_icon fa-solid fa-box-archive sidebar_item"></i>
+                    </a>
+                    <a href="" class="sidebar_icon-btn">
+                        <i class="btn sidebar_icon fa-regular fa-trash-can sidebar_item"></i>
+                    </a>
+                    <div class="sidebar_name-container">
+                        <p class="sidebar_name sidebar_item">Note</p>
+                        <p class="sidebar_name sidebar_item">Reminder</p>
+                        <p class="sidebar_name sidebar_item">Edit labels</p>
+                        <p class="sidebar_name sidebar_item">Storage</p>
+                        <p class="sidebar_name sidebar_item">Trash can</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const headerElm = document.querySelector('header').children
+        const menu_btn = document.querySelector('.header_menu')
+        const search_container = document.querySelector('.header_search')
+        const search_bar = document.querySelector('.header_search-bar')
+        const setting_Btn = document.querySelector('.setting-btn_js')
+        const setting_Box = setting_Btn.children[1]
+        const app_btn = document.querySelector('.app-btn_js')
+        const app_container = app_btn.children[1]
+        const body_area = document.querySelector('body')
+        const main_menu = document.querySelector('.sidebar_name-container')
+        // Show main menu
+        function showMainMenu() {
+            if (main_menu.style.display == '') {
+                main_menu.style.display = 'block'
+                menu_btn.style.backgroundColor = 'rgba(0, 0, 0, 0.05)';
+            } else {
+                main_menu.style.display = null
+                menu_btn.style.backgroundColor = null
+            }
+        }
+
+        // Change search bar style when focus in
+        function changeBackGroundSearch() {
+            search_container.style.backgroundColor = 'white'
+            search_bar.style.backgroundColor = 'white'
+            search_container.style.boxShadow = '1px 1px 3px 1px rgba(0, 0, 0, 0.1)'
+            search_container.addEventListener('focusout', function () {
+                search_container.style.backgroundColor = null
+                search_container.style.boxShadow = null
+                search_bar.style.backgroundColor = null
+            })
+        }
+        // Click outside and hide all boxes
+        document.onclick = function () {
+            // Hide Setting box
+            if (setting_Box.style.display == 'block') {
+                setting_Box.style.display = null
+            }
+            // Hide app container
+            if (app_container.style.display == 'flex') {
+                app_container.style.display = null
+            }
+        }
+        // Press Setting button
+        setting_Btn.addEventListener('click', function (event) {
+            if (setting_Box.style.display == '') {
+                setting_Box.style.display = 'block'
+            }
+            else {
+                setting_Box.style.display = null
+            }
+            event.stopPropagation()
+        })
+        // Press Apps button
+        app_btn.addEventListener('click', function (event) {
+            if (app_container.style.display == '') {
+                app_container.style.display = 'flex'
+            }
+            else {
+                app_container.style.display = null
+            }
+            event.stopPropagation()
+        })
+
+        
+
+    </script>
+
+</body>
+
+</html>
