@@ -67,8 +67,8 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
-    display: none;     
     z-index: 2;
+    /* display: block; */
 }
 .setting-box_item{
     width: 100%;
@@ -97,6 +97,8 @@
     border-bottom: none;
     border-radius: 20px;
     box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.1);
+}
+.hide{
     display: none;
 }
 .app-item{

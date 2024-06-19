@@ -45,9 +45,9 @@
             <li title="List view" class="btn header_features-item">
                 <i class="fa-solid fa-list"></i>
             </li>
-            <li title="Setting" class="btn header_features-item setting-btn_js">
+            <li id="setting-btn_js" title="Setting" class="btn header_features-item">
                 <i class="fa-solid fa-gear"></i>
-                <ul title="" class="setting-box">
+                <ul title="" class="setting-box hide">
                     <li class="setting-box_item"><a href="" class="setting-box_btn">Setting</a></li>
                     <li class="setting-box_item"><a href="" class="setting-box_btn">Turn on dark mode</a></li>
                     <li class="setting-box_item"><a href="" class="setting-box_btn">Send feedback</a></li>
@@ -56,9 +56,9 @@
                     <li class="setting-box_item"><a href="" class="setting-box_btn">Shortcuts</a></li>
                 </ul>
             </li>
-            <li title="Application" class="btn header_features-item app-btn_js">
+            <li id="app-btn_js" title="Application" class="btn header_features-item">
                 <i class="material-symbols-outlined">apps</i>
-                <div class="application-container">
+                <div class="application-container hide">
                     <a href="https://www.youtube.com/" target="_blank" class="app-item">
                         <i class="app-item_icon fa-brands fa-youtube" style="font-size:48px;color:red"></i>
                         <p class="app-item_name">Youtube</p>
@@ -120,9 +120,9 @@
         const menu_btn = document.querySelector('.header_menu')
         const search_container = document.querySelector('.header_search')
         const search_bar = document.querySelector('.header_search-bar')
-        const setting_Btn = document.querySelector('.setting-btn_js')
+        const setting_Btn = document.querySelector('#setting-btn_js')
         const setting_Box = setting_Btn.children[1]
-        const app_btn = document.querySelector('.app-btn_js')
+        const app_btn = document.querySelector('#app-btn_js')
         const app_container = app_btn.children[1]
         const body_area = document.querySelector('body')
         const main_menu = document.querySelector('.sidebar_name-container')
@@ -149,35 +149,21 @@
             })
         }
         // Click outside and hide all boxes
-        document.onclick = function () {
-            // Hide Setting box
-            if (setting_Box.style.display == 'block') {
-                setting_Box.style.display = null
+        document.onclick = e => {
+            if(!setting_Btn.contains(e.target) && !setting_Box.contains(e.target)){
+                setting_Box.classList.add('hide')
             }
-            // Hide app container
-            if (app_container.style.display == 'flex') {
-                app_container.style.display = null
+            if(!app_btn.contains(e.target) && !app_container.contains(e.target)){
+                app_container.classList.add('hide')
             }
         }
         // Press Setting button
-        setting_Btn.addEventListener('click', function (event) {
-            if (setting_Box.style.display == '') {
-                setting_Box.style.display = 'block'
-            }
-            else {
-                setting_Box.style.display = null
-            }
-            event.stopPropagation()
+        setting_Btn.addEventListener('click', () => {
+           setting_Box.classList.toggle('hide')
         })
         // Press Apps button
-        app_btn.addEventListener('click', function (event) {
-            if (app_container.style.display == '') {
-                app_container.style.display = 'flex'
-            }
-            else {
-                app_container.style.display = null
-            }
-            event.stopPropagation()
+        app_btn.addEventListener('click', () => {
+           app_container.classList.toggle('hide')
         })
 
         
